@@ -1,12 +1,47 @@
 body {
   background-color: #DADADA;
 }
-body > .grid {
+
+.middle {
   height: 100%;
 }
+
+/*
 .image {
   margin-top: -100px;
 }
+*/
+
 .column {
-  max-width: 450px;
+  max-width: 750px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#success {
+  /*
+  width: 4.5714em;
+  height: 4.5714em;
+  */
+
+  /* min-width: 4.5714em; */
+  display: block;
+
+  position: absolute;
+  /* huge
+  top: calc(50% - 32px - 8px);
+  left: calc(50% - 32px);
+  */
+  top: calc(50% - 64px - 8px);
+  left: calc(50% - 64px);
+  margin: 0px;
+  text-align: center;
+  z-index: 1000;
+
+}
+
+.fake-hidden {
+  display: none !important;
 }

@@ -4,48 +4,124 @@
     <meta charset="UTF-8">
     <title>LÖVE-Packer</title>
 
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.css">
+    <link rel="stylesheet" type="text/css" href="dropzone.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
 
-    <div class="ui middle aligned center aligned grid">
-      <div class="column">
-        <h2 class="ui teal image header">
-          <div class="content">
-            Build a new app
-          </div>
-        </h2>
-        <form class="ui large form">
-          <div class="ui stacked segment">
-            <div class="field">
-              <div class="ui left icon input">
-                <i class="user icon"></i>
-                <input type="text" name="email" placeholder="Game name">
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui left icon input">
-                <i class="lock icon"></i>
-                <input type="password" name="password" placeholder="Password">
-              </div>
-            </div>
-            <div class="ui fluid large teal submit button">Login</div>
-          </div>
-
-          <div class="ui error message"></div>
-
-        </form>
-        
+    <div class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Modal Title
+      </div>
+      <div class="image content">
+        <div class="image">
+          An image can appear on left or an icon
+        </div>
+        <div class="description">
+          A description can appear on the right
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui button">Cancel</div>
+        <div class="ui button">OK</div>
       </div>
     </div>
+
+    <div class="ui dimmer" id="loader">
+      <i id="success" class="massive green checkmark icon"></i>
+      <div class="ui large text loader"></div>
+    </div>
+
+    <form class="ui form">
+
+      <h2 class="ui blue centered aligned top attached header">
+        <div class="content">
+          LÖVE Packer
+        </div>
+      </h2>
+
+      <div class="ui attached segment">
+
+        <div class="fields">
+          <div class="eight wide required field">
+            <label for="game-name">Game Name</label>
+            <input placeholder="Pack Man" name="game-name" id="game-name" type="text">
+          </div>
+          <div class="eight wide field">
+            <label for="game-author">Author</label>
+            <input placeholder="Super Dev" name="game-author" id="game-author" type="text">
+          </div>
+        </div>
+
+        <div class="fields">
+          <div class="eight wide required field">
+            <label for="love-version">LÖVE Version</label>
+            <select class="ui dropdown" name="love-version" id="love-version">
+              <option value="0.10.1">0.10.1</option>
+              <option value="0.9.2">0.9.2</option>
+            </select>
+          </div>
+          <div class="eight wide field">
+            <label for="game-version">Game Version</label>
+            <input placeholder="1.0" name="game-version" id="game-version" type="text">
+          </div>
+        </div>
+
+        <div class="required field">
+          <label for="game-file">LÖVE File</label>
+          <input type="text" class="fake-file-input" readonly>
+          <input type="file" name="game-file" id="game-file" accept=".love">
+        </div>
+
+        <div class="field">
+          <label for="game-icon">Icon</label>
+          <input type="text" class="fake-file-input" readonly>
+          <input type="file" name="game-icon" id="game-icon" accept=".png">
+        </div>
+
+        <div class="required field">
+          <label for="release-directory">Release directory</label>
+          <input type="text" name="release-directory" id="release-directory" class="fake-directory-input" readonly>
+        </div>
+
+        <div class="two fields">
+          <div class="field">
+            <div class="active fluid ui medium toggle icon button" id="os-windows">
+              <i class="windows icon"></i>
+              Windows
+            </div>
+          </div>
+          <div class="field">
+            <div class="active fluid ui medium toggle icon button" id="os-osx">
+              <i class="apple icon"></i>
+              OS/X
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h2 class="ui blue bottom attached segment">
+        <div class="ui vertical animated primary fluid submit button">
+          <div class="visible content">Go!</div>
+          <div class="hidden content">
+            <i class="right arrow icon"></i>
+          </div>
+        </div>
+      </h2>
+
+    </form>
+
 
 
   </body>
 
-<script src="jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
+  <script src="jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
   <script src="semantic/dist/semantic.min.js"></script>
+  <script src="dropzone.js"></script>
+  <script src="app.js"></script>
 
   <script>
     // You can also require other files to run in this process
