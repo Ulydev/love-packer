@@ -8,4 +8,4 @@ LÖVE-Packer is a simple tool that lets you easily turn your LÖVE files into de
 
 Just provide a game name, a LÖVE file and a release directory, then click "Go". You're done.
 
-[logo]: http://i.imgur.com/0NNwbuk.png
+[logo]: http://i.imgur.com/6uJFvNP.png
